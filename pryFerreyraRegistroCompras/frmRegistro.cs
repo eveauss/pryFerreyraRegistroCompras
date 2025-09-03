@@ -21,5 +21,17 @@ namespace pryFerreyraRegistroCompras
         {
 
         }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            if (lstProducto.Text != "")
+            {
+                numCantidad.Enabled = true;
+            }
+            else
+            {
+                numCantidad.Enabled = false; 
+            }
+        }
     }
 }

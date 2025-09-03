@@ -29,29 +29,29 @@
         private void InitializeComponent()
         {
             gbAgregar = new GroupBox();
+            lstProducto = new ComboBox();
+            lblProducto = new Label();
             btnCancelar = new Button();
-            nCantidad = new NumericUpDown();
+            mtxtPrecio = new MaskedTextBox();
+            numCantidad = new NumericUpDown();
             lblCantidad = new Label();
             dtpFecha = new DateTimePicker();
             lblFecha = new Label();
             lblPrecio = new Label();
             btnAgregar = new Button();
-            mtxtPrecio = new MaskedTextBox();
-            cbProducto = new ComboBox();
-            lblProducto = new Label();
             gbAgregar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)nCantidad).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numCantidad).BeginInit();
             SuspendLayout();
             // 
             // gbAgregar
             // 
             gbAgregar.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             gbAgregar.BackColor = Color.White;
-            gbAgregar.Controls.Add(cbProducto);
+            gbAgregar.Controls.Add(lstProducto);
             gbAgregar.Controls.Add(lblProducto);
             gbAgregar.Controls.Add(btnCancelar);
             gbAgregar.Controls.Add(mtxtPrecio);
-            gbAgregar.Controls.Add(nCantidad);
+            gbAgregar.Controls.Add(numCantidad);
             gbAgregar.Controls.Add(lblCantidad);
             gbAgregar.Controls.Add(dtpFecha);
             gbAgregar.Controls.Add(lblFecha);
@@ -65,6 +65,23 @@
             gbAgregar.Text = "Registrar Producto";
             gbAgregar.Enter += gbAgregar_Enter;
             // 
+            // lstProducto
+            // 
+            lstProducto.FormattingEnabled = true;
+            lstProducto.Location = new Point(98, 45);
+            lstProducto.Name = "lstProducto";
+            lstProducto.Size = new Size(144, 23);
+            lstProducto.TabIndex = 48;
+            // 
+            // lblProducto
+            // 
+            lblProducto.AutoSize = true;
+            lblProducto.Location = new Point(39, 49);
+            lblProducto.Name = "lblProducto";
+            lblProducto.Size = new Size(56, 15);
+            lblProducto.TabIndex = 47;
+            lblProducto.Text = "Producto";
+            // 
             // btnCancelar
             // 
             btnCancelar.BackColor = Color.SteelBlue;
@@ -76,14 +93,23 @@
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = false;
             // 
-            // nCantidad
+            // mtxtPrecio
             // 
-            nCantidad.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            nCantidad.Location = new Point(98, 93);
-            nCantidad.Maximum = new decimal(new int[] { 999999999, 0, 0, 0 });
-            nCantidad.Name = "nCantidad";
-            nCantidad.Size = new Size(107, 23);
-            nCantidad.TabIndex = 42;
+            mtxtPrecio.Location = new Point(332, 95);
+            mtxtPrecio.Mask = "99999";
+            mtxtPrecio.Name = "mtxtPrecio";
+            mtxtPrecio.Size = new Size(102, 23);
+            mtxtPrecio.TabIndex = 43;
+            mtxtPrecio.ValidatingType = typeof(int);
+            // 
+            // numCantidad
+            // 
+            numCantidad.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            numCantidad.Location = new Point(98, 93);
+            numCantidad.Maximum = new decimal(new int[] { 999999999, 0, 0, 0 });
+            numCantidad.Name = "numCantidad";
+            numCantidad.Size = new Size(107, 23);
+            numCantidad.TabIndex = 42;
             // 
             // lblCantidad
             // 
@@ -131,32 +157,7 @@
             btnAgregar.TabIndex = 37;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = false;
-            // 
-            // mtxtPrecio
-            // 
-            mtxtPrecio.Location = new Point(332, 95);
-            mtxtPrecio.Mask = "99999";
-            mtxtPrecio.Name = "mtxtPrecio";
-            mtxtPrecio.Size = new Size(102, 23);
-            mtxtPrecio.TabIndex = 43;
-            mtxtPrecio.ValidatingType = typeof(int);
-            // 
-            // cbProducto
-            // 
-            cbProducto.FormattingEnabled = true;
-            cbProducto.Location = new Point(98, 45);
-            cbProducto.Name = "cbProducto";
-            cbProducto.Size = new Size(144, 23);
-            cbProducto.TabIndex = 48;
-            // 
-            // lblProducto
-            // 
-            lblProducto.AutoSize = true;
-            lblProducto.Location = new Point(39, 49);
-            lblProducto.Name = "lblProducto";
-            lblProducto.Size = new Size(56, 15);
-            lblProducto.TabIndex = 47;
-            lblProducto.Text = "Producto";
+            btnAgregar.Click += btnAgregar_Click;
             // 
             // frmRegistro
             // 
@@ -169,20 +170,20 @@
             Text = "Registro";
             gbAgregar.ResumeLayout(false);
             gbAgregar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)nCantidad).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numCantidad).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
         private GroupBox gbAgregar;
         private Button btnCancelar;
-        private NumericUpDown nCantidad;
+        private NumericUpDown numCantidad;
         private Label lblCantidad;
         private DateTimePicker dtpFecha;
         private Label lblFecha;
         private Label lblPrecio;
         private Button btnAgregar;
-        private ComboBox cbProducto;
+        private ComboBox lstProducto;
         private Label lblProducto;
         private MaskedTextBox mtxtPrecio;
     }

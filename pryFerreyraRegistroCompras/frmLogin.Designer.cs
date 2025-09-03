@@ -95,6 +95,7 @@
             btnIniciar.TabIndex = 14;
             btnIniciar.Text = "Iniciar";
             btnIniciar.UseVisualStyleBackColor = false;
+            btnIniciar.Click += btnIniciar_Click;
             // 
             // txtContraseña
             // 
