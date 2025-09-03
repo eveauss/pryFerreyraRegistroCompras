@@ -110,6 +110,7 @@
             txtUsuario.Name = "txtUsuario";
             txtUsuario.Size = new Size(100, 23);
             txtUsuario.TabIndex = 12;
+            txtUsuario.TextChanged += txtUsuario_TextChanged;
             // 
             // frmLogin
             // 

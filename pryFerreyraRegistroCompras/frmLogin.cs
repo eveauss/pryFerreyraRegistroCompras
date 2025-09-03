@@ -23,9 +23,18 @@ namespace pryFerreyraRegistroCompras
         }
 
         private void btnIniciar_Click(object sender, EventArgs e)
+
         {
+
+
             frmRegistro frm = new frmRegistro();
             frm.ShowDialog();
+            this.Close();
+        }
+
+        private void txtUsuario_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

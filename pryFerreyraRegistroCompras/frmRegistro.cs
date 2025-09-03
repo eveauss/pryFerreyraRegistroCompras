@@ -22,7 +22,19 @@ namespace pryFerreyraRegistroCompras
 
         }
 
+        DateTime Fecha;
+        String Producto;
+        int Cantidad;
+        int Precio;
+
+
         private void btnAgregar_Click(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void lstprod_text(object sender, EventArgs e)
         {
             if (lstProducto.Text != "")
             {
@@ -30,8 +42,16 @@ namespace pryFerreyraRegistroCompras
             }
             else
             {
-                numCantidad.Enabled = false; 
+                numCantidad.Enabled = false;
             }
+        }
+
+        private void Agregar_Click(object sender, EventArgs e)
+        {
+            Fecha = dtpFecha.Value;
+            Producto = lstProducto.Text;
+            Cantidad = Convert.ToInt32(numCantidad.Value);
+            Precio = Convert.ToInt32(txtPrecio.Text);
         }
     }
 }

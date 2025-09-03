@@ -32,13 +32,14 @@
             lstProducto = new ComboBox();
             lblProducto = new Label();
             btnCancelar = new Button();
-            mtxtPrecio = new MaskedTextBox();
+            txtPrecio = new MaskedTextBox();
             numCantidad = new NumericUpDown();
             lblCantidad = new Label();
             dtpFecha = new DateTimePicker();
             lblFecha = new Label();
             lblPrecio = new Label();
             btnAgregar = new Button();
+            lblResultado = new Label();
             gbAgregar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numCantidad).BeginInit();
             SuspendLayout();
@@ -50,14 +51,14 @@
             gbAgregar.Controls.Add(lstProducto);
             gbAgregar.Controls.Add(lblProducto);
             gbAgregar.Controls.Add(btnCancelar);
-            gbAgregar.Controls.Add(mtxtPrecio);
+            gbAgregar.Controls.Add(txtPrecio);
             gbAgregar.Controls.Add(numCantidad);
             gbAgregar.Controls.Add(lblCantidad);
             gbAgregar.Controls.Add(dtpFecha);
             gbAgregar.Controls.Add(lblFecha);
             gbAgregar.Controls.Add(lblPrecio);
             gbAgregar.Controls.Add(btnAgregar);
-            gbAgregar.Location = new Point(12, 47);
+            gbAgregar.Location = new Point(12, 29);
             gbAgregar.Name = "gbAgregar";
             gbAgregar.Size = new Size(505, 216);
             gbAgregar.TabIndex = 9;
@@ -72,6 +73,7 @@
             lstProducto.Name = "lstProducto";
             lstProducto.Size = new Size(144, 23);
             lstProducto.TabIndex = 48;
+            lstProducto.TextChanged += lstprod_text;
             // 
             // lblProducto
             // 
@@ -86,21 +88,21 @@
             // 
             btnCancelar.BackColor = Color.SteelBlue;
             btnCancelar.ForeColor = Color.White;
-            btnCancelar.Location = new Point(293, 149);
+            btnCancelar.Location = new Point(286, 149);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(71, 24);
             btnCancelar.TabIndex = 44;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = false;
             // 
-            // mtxtPrecio
+            // txtPrecio
             // 
-            mtxtPrecio.Location = new Point(332, 95);
-            mtxtPrecio.Mask = "99999";
-            mtxtPrecio.Name = "mtxtPrecio";
-            mtxtPrecio.Size = new Size(102, 23);
-            mtxtPrecio.TabIndex = 43;
-            mtxtPrecio.ValidatingType = typeof(int);
+            txtPrecio.Location = new Point(332, 95);
+            txtPrecio.Mask = "99999";
+            txtPrecio.Name = "txtPrecio";
+            txtPrecio.Size = new Size(102, 23);
+            txtPrecio.TabIndex = 43;
+            txtPrecio.ValidatingType = typeof(int);
             // 
             // numCantidad
             // 
@@ -126,7 +128,7 @@
             dtpFecha.Format = DateTimePickerFormat.Short;
             dtpFecha.Location = new Point(332, 45);
             dtpFecha.Name = "dtpFecha";
-            dtpFecha.Size = new Size(109, 23);
+            dtpFecha.Size = new Size(102, 23);
             dtpFecha.TabIndex = 40;
             // 
             // lblFecha
@@ -150,14 +152,23 @@
             // btnAgregar
             // 
             btnAgregar.BackColor = Color.SteelBlue;
+            btnAgregar.Enabled = false;
             btnAgregar.ForeColor = Color.White;
-            btnAgregar.Location = new Point(370, 149);
+            btnAgregar.Location = new Point(363, 149);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(71, 24);
             btnAgregar.TabIndex = 37;
-            btnAgregar.Text = "Agregar";
+            btnAgregar.Text = "Registrar";
             btnAgregar.UseVisualStyleBackColor = false;
-            btnAgregar.Click += btnAgregar_Click;
+            btnAgregar.Click += Agregar_Click;
+            // 
+            // lblResultado
+            // 
+            lblResultado.BackColor = Color.White;
+            lblResultado.Location = new Point(12, 248);
+            lblResultado.Name = "lblResultado";
+            lblResultado.Size = new Size(505, 44);
+            lblResultado.TabIndex = 49;
             // 
             // frmRegistro
             // 
@@ -165,6 +176,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.SteelBlue;
             ClientSize = new Size(529, 319);
+            Controls.Add(lblResultado);
             Controls.Add(gbAgregar);
             Name = "frmRegistro";
             Text = "Registro";
@@ -185,6 +197,7 @@
         private Button btnAgregar;
         private ComboBox lstProducto;
         private Label lblProducto;
-        private MaskedTextBox mtxtPrecio;
+        private MaskedTextBox txtPrecio;
+        private Label lblResultado;
     }
 }
